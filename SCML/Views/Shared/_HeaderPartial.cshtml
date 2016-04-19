@@ -1,0 +1,22 @@
+﻿<div class="container">
+    <nav class="navbar navbar-default" role="navigation" data-spy="affix" data-offset-top="197">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="." ><img alt="Home" src="~/Content/images/logo.png" width="100%" height="100%"/> </a>
+             @*@Html.ActionLink("Home", "index", "Home", null, new { @class = "logo navbar-brand" })*@
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right" style="">
+                @Html.Partial("_LoginPartial")
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</div>
