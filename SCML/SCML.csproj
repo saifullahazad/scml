@@ -1720,6 +1720,7 @@
     <Content Include="Views\Shared\EditorTemplates\tinymce_full.cshtml" />
     <Content Include="Views\Event\List.cshtml" />
     <Content Include="Views\Event\Detail.cshtml" />
+    <Content Include="Views\Home\ManagementTeam.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

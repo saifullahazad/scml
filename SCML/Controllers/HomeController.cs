@@ -34,6 +34,13 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS.Controllers
             return View();
         }
 
+        public ActionResult ManagementTeam()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
 
         public ActionResult Contact()
         {
