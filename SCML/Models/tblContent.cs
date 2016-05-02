@@ -2,6 +2,7 @@ namespace SCML.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -38,12 +39,20 @@ namespace SCML.Models
 
         public int? sort_order { get; set; }
 
-        [Column(TypeName = "date")]
+        //[Column(TypeName = "date")]
+        [DefaultValue(true)]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime publish_date { get; set; }
 
-        [Required]
+        
         [StringLength(128)]
         public string publish_by { get; set; }
+
+
+        [StringLength(150)]
+        public string href { get; set; }
+        
 
         public virtual Type Type { get; set; }
     }
