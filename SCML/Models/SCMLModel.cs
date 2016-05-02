@@ -37,6 +37,10 @@ namespace SCML.Models
                 .Property(e => e.content_file_path)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Content>()
+              .Property(e => e.href)
+              .IsUnicode(false);
+
             modelBuilder.Entity<Type>()
                 .Property(e => e.name)
                 .IsUnicode(false);
