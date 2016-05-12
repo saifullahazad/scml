@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    @Html.Partial("_JumbotronPartial")
+</div>
+<br />
+
+@Html.Partial("_ServicesPartial")
+
+<div class="row">
+    <div class="col-md-6">
+        @Html.Partial("_LNewsPartial")
+    </div>
+    <div class="col-md-6">
+        @Html.Partial("_MCommentsPartial")
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        @Html.Partial("_IPONotesPartial")
+    </div>
+    <div class="col-md-6">
+        @Html.Partial("_ReportsPartial")
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿@model SCML.Models.MCommentsViewModel
+@{
+    Layout = null;
+}
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title">Market Comments</h3>
+    </div>
+    <div class="panel-body">
+
+        @if (Model.MComments != null)
+        {
+            foreach (var item in Model.MComments)
+            {
+                <div class="alert alert-dismissible alert-warning">
+                    <a href="@item.href" class="alert-link"><strong>@item.title</strong><p style="font-weight:normal;"> @item.summary</p></a>
+                </div>
+            }
+        }
+
+        @*<div class="alert alert-dismissible alert-warning">
+            <a href="#" class="alert-link"><strong>EXCH!</strong><p style="font-weight:normal;"> Honorable Investors, Good morning! Please make your investment decisi...</p></a>
+        </div>
+        <div class="alert alert-dismissible alert-warning">
+            <a href="#" class="alert-link"><strong>REGL!</strong><p style="font-weight:normal;">Investors are requested to consider the following facts at the time of...</p></a>
+        </div>*@
+        <div class="panel-footer" style="text-align:right">
+            <a class="btn btn-warning" href="@Url.Action("MoreList", "Contents", new { type = "MComments" })">More</a>
+        </div>
+    </div>
+</div>

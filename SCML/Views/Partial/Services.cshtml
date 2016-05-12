@@ -1,0 +1,16 @@
+﻿@model SCML.Models.ServicesViewModel
+@{
+    Layout = null;
+}
+
+@if(Model.Services != null)
+{
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Model.Services.title</h3>
+        </div>
+        <div class="panel-body">
+            @Html.Raw(@Model.Services.contents)
+        </div>
+    </div>
+}

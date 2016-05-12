@@ -1,0 +1,19 @@
+﻿@model SCML.Models.Content
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model != null)
+{
+    <h2>Model.title</h2>
+    <section id="projects" class="well">
+        <img alt="@Model.title" src="@Model.large_image_path" width="100%" />
+
+        @Html.Raw(Model.contents)
+    </section>
+}
+

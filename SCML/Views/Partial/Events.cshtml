@@ -1,0 +1,71 @@
+﻿@model SCML.Models.EventsViewModel
+@{
+    Layout = null;
+}
+
+<div id="divEventsPartialView" class="panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title">Workshops / Events</h3>
+    </div>
+    <div class="panel-body">
+        @if (Model.Events != null)
+        {
+            foreach (var item in Model.Events)
+            {
+                <a href="@Url.Action("Detail","Event", new { id = item.id})">
+                    <div class="panel panel-default" style="width:47%; float:left">
+                        <div class="panel-body">
+                            <img alt="@item.title" src="@item.thambnail_image_path" height="124px" width="110px" />
+                        </div>
+                        <div class="panel-footer">@item.title</div>
+                    </div>
+                </a>
+            }
+        }
+
+        @*<a href="#">
+                <div class="panel panel-default" style="width:47%; float:left">
+                    <div class="panel-body">
+                        <img alt="Event 1" src="~/Images/event_1.png" height="100%" width="100%" />
+                    </div>
+                    <div class="panel-footer">Event 3</div>
+                </div>
+            </a>*@
+
+            @*<a href="@Url.Action("Detail/1","Event")">
+                    <div class="panel panel-default" style="width:47%; float:left">
+                        <div class="panel-body">
+                            <img alt="Event 1" src="~/Images/event_1.png" height="100%" width="100%" />
+                        </div>
+                        <div class="panel-footer">Event 1</div>
+                    </div>
+                </a
+
+                <a href="#">
+                    <div class="panel panel-default" style="width:47%; float:right">
+                        <div class="panel-body">
+                            <img alt="Event 2" src="~/Images/event_2.png" height="100%" width="100%" />
+                        </div>
+                        <div class="panel-footer">Event 2</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="panel panel-default" style="width:47%; float:left">
+                        <div class="panel-body">
+                            <img alt="Event 1" src="~/Images/event_1.png" height="100%" width="100%" />
+                        </div>
+                        <div class="panel-footer">Event 3</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="panel panel-default" style="width:47%; float:right">
+                        <div class="panel-body">
+                            <img alt="Event 2" src="~/Images/event_2.png" height="100%" width="100%" />
+                        </div>
+                        <div class="panel-footer">Event 4</div>
+                    </div>
+                </a>*@
+
+        </div>
+    </div>
+

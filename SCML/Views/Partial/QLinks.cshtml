@@ -1,0 +1,62 @@
+﻿@model SCML.Models.QLinksViewModel
+@{
+    Layout = null;
+}
+
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title">Quick Links</h3>
+    </div>
+    <div class="panel-body">
+        @if (Model.QLinks != null)
+        {
+            foreach (var item in Model.QLinks)
+            {
+                <a target="_blank" href="@item.href">
+                    <div class="panel panel-default" style="width:24%; float:left">
+                        <div class="panel-body">
+                            <img alt="@item.href" src="@item.thambnail_image_path" height="100%" width="100%" />
+                        </div>
+                        <div class="panel-footer">@item.title</div>
+                    </div>
+                </a>
+            }
+        }
+
+        @*<a target="_blank" href="http://sec.gov.bd">
+            <div class="panel panel-default" style="width:24%; float:left">
+                <div class="panel-body">
+                    <img alt="SEC" src="~/Images/quick_link_sec.png" height="100%" width="100%" />
+                </div>
+                <div class="panel-footer">SEC</div>
+            </div>
+        </a>
+        <a target="_blank" href="http://dsebd.org">
+            <div class="panel panel-default" style="width:24%; float:left; margin-left:4px">
+                <div class="panel-body">
+                    <img alt="DSE" src="~/Images/quick_link_dse.png" height="100%" width="100%" />
+                </div>
+                <div class="panel-footer">DSE</div>
+            </div>
+        </a>
+        <a target="_blank" href="http://cdbl.com.bd">
+            <div class="panel panel-default" style="width:24%; float:right">
+                <div class="panel-body">
+                    <img alt="CDBL" src="~/Images/quick_link_cdbl.png" height="100%" width="100%" />
+                </div>
+                <div class="panel-footer">CDBL</div>
+            </div>
+        </a>
+        <a target="_blank" href="http://cse.com.bd">
+            <div class="panel panel-default" style="width:24%; float:right; margin-right:4px">
+                <div class="panel-body">
+                    <img alt="CSE" src="~/Images/quick_link_cse.png" height="100%" width="100%" />
+                </div>
+                <div class="panel-footer">CSE</div>
+            </div>
+        </a>*@
+
+
+    </div>
+</div>

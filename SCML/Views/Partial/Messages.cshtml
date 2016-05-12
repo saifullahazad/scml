@@ -1,0 +1,19 @@
+﻿@model SCML.Models.MessagesViewModel
+@{
+    Layout = null;
+}
+
+@if (Model.Messages != null)
+{
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Html.Raw(@Model.Messages.title)</h3>
+        </div>
+        <div class="panel-body">
+            <blockquote>
+                @Html.Raw(@Model.Messages.contents)
+                <small><cite title="Message from CEO">@Html.Raw(@Model.Messages.summary)</cite></small>
+            </blockquote>
+        </div>
+    </div>
+}

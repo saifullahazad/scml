@@ -1,0 +1,35 @@
+﻿@model SCML.Models.PostsViewModel
+@{
+    Layout = null;
+}
+
+<h3>Recent Post</h3>
+@if (Model.Posts != null)
+{
+    foreach (var item in Model.Posts)
+    {
+        <a href="@Url.Action("Detail","Event", new { id = item.id})">
+            <blockquote>
+                <h4 class="list-group-item-heading">@item.title</h4>
+                <p class="list-group-item-text">@item.summary</p>
+                <small><cite title="Anroid App Available">@item.publish_date</cite></small>
+            </blockquote>
+        </a>
+    }
+}
+
+@*<a href="#">
+    <blockquote>
+        <h4 class="list-group-item-heading">Anroid App Available</h4>
+        <p class="list-group-item-text">SCML declare an execulsive Android app for manage porfolio.</p>
+        <small><cite title="Anroid App Available">September 14, 2013</cite></small>
+    </blockquote>
+</a>
+<a href="#">
+    <blockquote class="blockquote-reverse">
+        <h4 class="list-group-item-heading">List group item heading</h4>
+        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        <small><cite title="Anroid App Available">September 14, 2013</cite></small>
+    </blockquote>
+</a>*@
+

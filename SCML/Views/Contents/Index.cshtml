@@ -1,0 +1,67 @@
+﻿@model IEnumerable<SCML.Models.Content>
+
+@{
+    ViewBag.Title = "Content List";
+}
+<h2>@ViewBag.Title</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create", "Contents", routeValues: null, htmlAttributes: new { @class = "btn btn-warning" })
+
+    </p>
+
+@using (Html.BeginForm("Index", "Contents", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model, "Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("typeId", (SelectList)ViewBag.types,"--Select--", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <input type="submit" class="btn btn-warning" value="Search">
+}
+<br />    
+
+    
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>
+                Type
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Sort Order
+            </th>
+            <th>
+                Publish Date
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sort_order)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.publish_date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { onclick = "return confirm('Are you sure you wish to delete this item?');" })
+                </td>
+            </tr>
+        }
+
+    </table>
